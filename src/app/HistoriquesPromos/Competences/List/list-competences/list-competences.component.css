@@ -1,0 +1,31 @@
+.cardPrincipal {
+    max-width: 70%; 
+    height: 640px; 
+    margin-left: 15%; 
+    border: 1px solid black; 
+    border-radius: 5px; 
+    margin-top: 6%;
+}
+.ajouter {
+    margin-left: 995px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1%;
+}
+.Titre {
+    margin-top: 5%;
+    font-weight: bold;
+    margin-left: 60%;
+}
+
+/* .tables {
+    margin-left: 35%;
+    font-size: 18px;
+    margin-top: 6%;
+    text-align: center;
+}
+
+
+
+ */

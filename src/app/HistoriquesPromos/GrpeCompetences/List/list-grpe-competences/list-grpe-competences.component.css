@@ -1,0 +1,22 @@
+.tables {
+    margin-left: 35%;
+    font-size: 18px;
+    margin-top: 6%;
+    text-align: center;
+}
+
+.Titre {
+    margin-top: 5%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ajouter {
+    margin-left: 75%;
+    width: 90px;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1%;
+    color: rgb(55, 154, 167);
+}

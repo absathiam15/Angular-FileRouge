@@ -1,0 +1,45 @@
+.labels {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.inputAjout {
+    margin-top: 100px;
+    width: 40%;
+    height: 450px;
+    margin-left: 20%;
+    
+}
+.Titre {
+    margin-top: 4%;
+    font-weight: bold;
+    text-align: center;
+}
+.btSubmit {
+    width: 18%;
+    height: 48px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 70%;
+    margin-top: 2%;
+}
+.champ {
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(7, 12, 12);
+}
+.textArea {
+    height: 150px; 
+    border-radius: 5px; 
+    margin-left: 17%;
+    border: 1px solid rgb(7, 12, 12);
+
+}
+.labe {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 14%;
+    
+}
