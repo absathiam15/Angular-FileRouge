@@ -1,4 +1,3 @@
-<p>figyug</p>
 
 <div class="page">
   <div class="container">
@@ -18,18 +17,18 @@
           </div>
         </div>
 
-          <div class="form-group">
-            <input [ngClass]="{'is-invalid': submitted && f.password.errors}" class="form-control rounded-lg h-50"
-              type="password" formControlName="password" placeholder="Password" id="">
-            <div *ngIf="submitted && f.password.errors" class="input_alert">
-              <div *ngIf="f.password.errors.required">le mot de passe est obligatoire </div>
-            </div>
+        <div class="form-group">
+          <input [ngClass]="{'is-invalid': submitted && f.password.errors}" class="form-control rounded-lg h-50"
+            type="password" formControlName="password" placeholder="Password" id="">
+          <div *ngIf="submitted && f.password.errors" class="input_alert">
+            <div *ngIf="f.password.errors.required">le mot de passe est obligatoire </div>
           </div>
+        </div>
 
-            <div class="d-flex button justify-content-center">
-              <button [disabled]="loading" name="connexion" type="submit"
-                class="btn btn-outline-success w-50 h-100 rounded-lg">Connexion</button>
-            </div>
+          <div class="d-flex button justify-content-center">
+            <button [disabled]="loading" name="connexion" type="submit"
+              class="btn btn-outline-success w-50 h-100 rounded-lg">Connexion</button>
+          </div>
 
       </form>
     </div>

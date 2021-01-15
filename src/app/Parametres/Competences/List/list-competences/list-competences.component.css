@@ -1,0 +1,45 @@
+.cardPrincipal {
+    max-width: 70%; 
+    height: 740px; 
+    margin-left: 15%; 
+    border-radius: 5px; 
+    margin-top: 6%;
+}
+.ajouter {
+    margin-left: 995px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1%;
+}
+.Titre {
+    margin-top: 3%;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 60%;
+}
+
+.selectB {
+    width: 77%;
+    margin-left: -2%;
+    
+
+}
+
+.Akordion {
+    width: 81%;
+    height: 0px;
+    margin-left: 75%;
+    margin-top: 8%;
+}
+
+.ajouter {
+    margin-left: 135%;
+    width: 90px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1%;
+    color: rgb(55, 154, 167);
+}
+

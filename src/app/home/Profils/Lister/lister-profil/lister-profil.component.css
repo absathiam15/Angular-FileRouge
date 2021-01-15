@@ -12,8 +12,16 @@
     margin-top: 1%;
 }
 .tables {
-    margin-left: 35%;
-    font-size: 18px;
-    margin-top: 6%;
+    width: 120%;
+    margin-left: 30%;
+    font-size: 20px;
+    margin-top: 14%;
     text-align: center;
+}
+.cardPrincipal {
+    width: 70%; 
+    height: 640px; 
+    margin-left: 15%; 
+    border-radius: 5px; 
+    margin-top: 8%;
 }

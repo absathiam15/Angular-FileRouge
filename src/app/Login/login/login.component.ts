@@ -11,6 +11,9 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  apiUrl='http://127.0.0.1:8000/api';
+  // public displayedColumns = ['Nom', 'Prenom', 'Adresse', 'Telephone', 'Roles', 'Update', 'Delete'];
+
   model: any = {};
   // public loginForm: FormGroup;
   loading = false;
@@ -80,8 +83,7 @@ export class LoginComponent implements OnInit {
   
     login() {
           // On récupère l'url de redirection
-          const redirectUrl = this.route.snapshot.queryParams['redirectUrl'] || '/home';
-           
+          const redirectUrl = this.route.snapshot.queryParams['redirectUrl'] || '/home'; 
           // On accède à la page souhaitée
           this.router.navigate([redirectUrl]);
           //this.authentificationService.login(this.model);
@@ -90,7 +92,5 @@ export class LoginComponent implements OnInit {
           // console.log(this.authenticationService.getToken());
   
         }
-   
-        
-
+    
 }

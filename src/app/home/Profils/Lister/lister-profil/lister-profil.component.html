@@ -1,50 +1,25 @@
 <router-outlet></router-outlet>
-
+<div class="card cardPrincipal shadow-lg p-3 mb-5 bg-white">
     <h3 class="Titre">Liste des Profils</h3>
-    <div >
-        <a routerLink="/home/profils/add" class="btn btn-warning text-white ajouter">Ajouter</a>
-    </div>
     <div class="row">
         <div class="col-sm-7">
             <table class="table table-bordered tables">
-                <thead>
+                <thead class="thead-light">
                   <tr>
                     <th scope="col">Libelle</th>
                     <th scope="col-sm-2">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Administrateur</td>
-                    <td>
+                  <tr *ngFor="let profil of data">
+                    <td >{{profil.libelle}}</td>
+                    <td >
                         <a  class="btn btn-sm btn-outline-success mr-2">Liste Admin</a>
                         <a  class="btn btn-sm btn-outline-warning mr-2">Edit</a>
                         <a  class="btn btn-sm btn-outline-danger mr-2">Supprimer</a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>Formateur</td>
-                    <td>
-                        <a  class="btn btn-sm btn-outline-success mr-2">Liste Formateur</a>
-                        <a class="btn btn-sm btn-outline-warning mr-2">Edit</a>
-                        <a  class="btn btn-sm btn-outline-danger mr-2">Supprimer</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Community Manager</td>
-                    <td>
-                        <a  class="btn btn-sm btn-outline-success mr-2">Liste CM</a>
-                        <a  class="btn btn-sm btn-outline-warning mr-2">Edit</a>
-                        <a  class="btn btn-sm btn-outline-danger mr-2">Supprimer</a>
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>Apprenant</td>
-                        <td>
-                            <a  class="btn btn-sm btn-outline-success mr-2">Liste Apprenants</a>
-                            <a  class="btn btn-sm btn-outline-warning mr-2">Edit</a>
-                            <a  class="btn btn-sm btn-outline-danger mr-2">Supprimer</a>
-                        </td>
-                        </tr>
+                  
                 </tbody>
             </table>
+          </div>

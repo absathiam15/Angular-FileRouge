@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-lister-user',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListerUserComponent implements OnInit {
 
-  constructor() { }
+   dataSource:any;
 
-  ngOnInit(): void {
+  constructor(
+    private http: HttpClient,
+    public userService: UserService
+  ) { }
+
+  ngOnInit() {
+    this.getAllUsers();
+  }
+  
+  getAllUsers() {
+    this.userService.lister().subscribe(
+      (data:any) => {
+        this.dataSource = data;
+        console.log(this.dataSource);  
+      },
+      (error: any) => console.log(error.console.error.message)
+    )
   }
 
 }

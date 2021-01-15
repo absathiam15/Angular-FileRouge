@@ -2,62 +2,37 @@
 <div class="card"></div>
 <h3 class="Titre">Liste des Utilisateurs</h3>
 <div >
-    <a routerLink="/home/users/add" class="btn btn-warning text-white ajouter">Ajouter</a>
+    <a routerLink="/home/users/add"><i class="fas fa-user-plus ajouter"></i></a>
 </div>
 
 <div class="row ">
     <div class="col-sm-7">
         <table class="table table-bordered tables">
-  <thead>
+  <thead class="thead-light">
     <tr>
       <th scope="col">Avatar</th>
+      <th scope="col">Username</th>
       <th scope="col">Nom</th>
       <th scope="col">Prenom</th>
-      <th scope="col">Mail</th>
+      <th scope="col">Email</th>
       <th scope="col">Profil</th>
-      <th scope="col">Prenom</th>
       <th scope="col-sm-2">Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>Otto</td>
-      <td>Otto</td>
-      <td>Otto</td>
-      <td>Otto</td>
+    <tr *ngFor="let user of dataSource">
+      <td><img src="data:image/jpeg;base64,{{user.avatar}}"></td>
+      <td>{{user.username}}</td>
+      <td>{{user.nom}}</td>
+      <td>{{user.prenom}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.profil.libelle}}</td>
       <td>
           <a  class="btn btn-sm btn-outline-success mr-2">Details</a>
           <a  class="btn btn-sm btn-outline-warning mr-2">Edit</a>
           <a  class="btn btn-sm btn-outline-danger mr-2">Supprimer</a>
       </td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>Thornton</td>
-      <td>Thornton</td>
-      <td>Thornton</td>
-      <td>Thornton</td>
-      <td>
-          <a  class="btn btn-sm btn-outline-success mr-2">Details</a>
-          <a class="btn btn-sm btn-outline-warning mr-2">Edit</a>
-          <a  class="btn btn-sm btn-outline-danger mr-2">Supprimer</a>
-      </td>
-    </tr>
-    <tr>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>the Bird</td>
-      <td>the Bird</td>
-      <td>the Bird</td>
-      <td>the Bird</td>
-      <td>
-          <a  class="btn btn-sm btn-outline-success mr-2">Details</a>
-          <a  class="btn btn-sm btn-outline-warning mr-2">Edit</a>
-          <a  class="btn btn-sm btn-outline-danger mr-2">Supprimer</a>
-      </td>  
-    </tr>
   </tbody>
 </table>
+    </div>
+    

@@ -12,20 +12,20 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { AddUserComponent } from './home/Users/users/add-user/add-user.component';
 import { ListerUserComponent } from './home/Users/users/List/lister-user/lister-user.component';
 import { EditUserComponent } from './home/Users/users/Edit/edit-user/edit-user.component';
-import { ListPromoComponent } from './HistoriquesPromos/Promos/List/list-promo/list-promo.component';
-import { AddPromoComponent } from './HistoriquesPromos/Promos/Add/add-promo/add-promo.component';
-import { AddCompetencesComponent } from './HistoriquesPromos/Competences/Add/add-competences/add-competences.component';
-import { ListCompetencesComponent } from './HistoriquesPromos/Competences/List/list-competences/list-competences.component';
-import { AddGrpeCompetencesComponent } from './HistoriquesPromos/GrpeCompetences/Add/add-grpe-competences/add-grpe-competences.component';
-import { ListGrpeCompetencesComponent } from './HistoriquesPromos/GrpeCompetences/List/list-grpe-competences/list-grpe-competences.component';
-import { AddGrpeTagComponent } from './HistoriquesPromos/GrpeTags/Add/add-grpe-tag/add-grpe-tag.component';
-import { ListGrpeTagComponent } from './HistoriquesPromos/GrpeTags/List/list-grpe-tag/list-grpe-tag.component';
-import { AddProfilSortieComponent } from './HistoriquesPromos/ProfilSortie/Add/add-profil-sortie/add-profil-sortie.component';
-import { ListProfilSortieComponent } from './HistoriquesPromos/ProfilSortie/List/list-profil-sortie/list-profil-sortie.component';
-import { AddReferentielComponent } from './HistoriquesPromos/Referentiels/Add/add-referentiel/add-referentiel.component';
-import { ListReferentielComponent } from './HistoriquesPromos/Referentiels/List/list-referentiel/list-referentiel.component';
+import { ListPromoComponent } from './Parametres/Promos/List/list-promo/list-promo.component';
+import { AddPromoComponent } from './Parametres/Promos/Add/add-promo/add-promo.component';
+import { AddCompetencesComponent } from './Parametres/Competences/Add/add-competences/add-competences.component';
+import { ListCompetencesComponent } from './Parametres/Competences/List/list-competences/list-competences.component';
+import { AddGrpeCompetencesComponent } from './Parametres/GrpeCompetences/Add/add-grpe-competences/add-grpe-competences.component';
+import { ListGrpeCompetencesComponent } from './Parametres/GrpeCompetences/List/list-grpe-competences/list-grpe-competences.component';
+import { AddGrpeTagComponent } from './Parametres/GrpeTags/Add/add-grpe-tag/add-grpe-tag.component';
+import { ListGrpeTagComponent } from './Parametres/GrpeTags/List/list-grpe-tag/list-grpe-tag.component';
+import { AddProfilSortieComponent } from './Parametres/ProfilSortie/Add/add-profil-sortie/add-profil-sortie.component';
+import { ListProfilSortieComponent } from './Parametres/ProfilSortie/List/list-profil-sortie/list-profil-sortie.component';
+import { AddReferentielComponent } from './Parametres/Referentiels/Add/add-referentiel/add-referentiel.component';
+import { ListReferentielComponent } from './Parametres/Referentiels/List/list-referentiel/list-referentiel.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HistoriquesPromosComponent } from './HistoriquesPromos/historiques-promos.component';
+import { ParametreComponent } from './Parametres/parametre.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './Login/login/login.component';
@@ -33,6 +33,11 @@ import { ApprenantComponent } from './home/Apprenant/apprenant/apprenant.compone
 import { CmComponent } from './home/CM/cm/cm.component';
 import { AdminComponent } from './home/Admin/admin/admin.component';
 import { FormateurComponent } from './home/Formateur/formateur/formateur.component';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UserService } from './home/Users/users/user.service';
+import { TokenInterceptor } from './Login/token.interceptor';
+import { ProfilsService } from './profils.service';
+import { UserComponent } from './home/Users/user.component';
 
 @NgModule({
   declarations: [
@@ -60,22 +65,31 @@ import { FormateurComponent } from './home/Formateur/formateur/formateur.compone
     AddReferentielComponent,
     ListReferentielComponent,
     PageNotFoundComponent,
-    HistoriquesPromosComponent,
+    ParametreComponent,
     AdminComponent,
     FormateurComponent,
     ApprenantComponent,
     CmComponent,
+    UserComponent,
     
   ],
   imports: [
-    
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    ProfilsService,
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: TokenInterceptor, 
+      multi: true 
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

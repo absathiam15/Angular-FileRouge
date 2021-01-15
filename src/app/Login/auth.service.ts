@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, from, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../user';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -18,8 +18,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private router: Router,
-    // private user: User
+    private router: Router
      ) {}
 
      httpOptions = {
@@ -39,7 +38,6 @@ export class AuthService {
                     localStorage.setItem('token', user.token);
                      let tokenInfo=this.getInfoToken(user['token']);
                     localStorage.setItem('currentUserInfo',JSON.stringify(tokenInfo));
-                    //this.currentUserSubject.next(user);
                     console.log(tokenInfo.roles[0]);
                     return tokenInfo.roles[0];
                 })

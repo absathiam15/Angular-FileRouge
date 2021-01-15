@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HistoriquesPromosComponent } from './historiques-promos.component';
+import { HistoriquesPromosComponent } from './parametre.component';
 
 describe('HistoriquesPromosComponent', () => {
   let component: HistoriquesPromosComponent;

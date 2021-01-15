@@ -1,7 +1,8 @@
 .tables {
-    margin-left: 35%;
-    font-size: 18px;
-    margin-top: 4%;
+    width: 125%;
+    margin-left: 30%;
+    font-size: 20px;
+    margin-top: 10%;
     text-align: center;
 }
 
@@ -17,7 +18,13 @@
     font-size: 30px;
     font-weight: bold;
     border-radius: 5px;
-    margin-top: 1%;
+    margin-top: 2%;
     color: rgb(55, 154, 167);
 }
-
+.cardPrincipal {
+    max-width: 70%; 
+    height: 740px; 
+    margin-left: 15%; 
+    border-radius: 5px; 
+    margin-top: 6%;
+}

@@ -7,7 +7,9 @@ export class User {
     genre: string,
     adresse: string,
     avatar: string,
-    id?: number
+    token: string,
+    id?: number,
+    
     ) {}
 
 }

@@ -1,0 +1,38 @@
+.cardPrincipal {
+    max-width: 70%; 
+    height: 740px; 
+    margin-left: 15%; 
+    border-radius: 5px; 
+    margin-top: 6%;
+}
+.labels {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: ;
+}
+.btSubmit {
+    width: 15%;
+    height: 48px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 70%;
+    margin-top: 2%;
+}
+.buttonSelect {
+    width: 20%;
+    height: 60px;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+.cardT {
+    margin-left: 10%;
+    margin-top: 8%;
+    width: 80%;
+    height: 590px;
+    border: 1px solid black;
+}
+.niveau {
+    color: black;
+}
