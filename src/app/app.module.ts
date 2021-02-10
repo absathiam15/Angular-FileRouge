@@ -38,6 +38,8 @@ import { UserService } from './home/Users/users/user.service';
 import { TokenInterceptor } from './Login/token.interceptor';
 import { ProfilsService } from './profils.service';
 import { UserComponent } from './home/Users/user.component';
+import { CompetencesService } from './Parametres/Competences/competences.service';
+import { GrpCompetencesService } from './Parametres/GrpeCompetences/grp-competences.service';
 
 @NgModule({
   declarations: [
@@ -84,6 +86,8 @@ import { UserComponent } from './home/Users/user.component';
   providers: [
     UserService,
     ProfilsService,
+    CompetencesService,
+    GrpCompetencesService,
     { 
       provide: HTTP_INTERCEPTORS, 
       useClass: TokenInterceptor, 

@@ -2,51 +2,91 @@
 <h3 class="Titre">Ajouter un Utilisateur</h3>
 <div class="inputAjout">
     <form [formGroup]="registerForm" (ngSubmit)="onAdd()">
+      <div class="form-group row ">
+        <label class="col-sm-2 col-form-label text-dark labels">Username</label>
+        <div class="col-sm-10">
+          <input  [ngClass]="{'is-invalid': submitted && f.username.errors}" formControlName="username" type="text" class="form-control champ border-dark h-75 w-75" id="" placeholder="Username">
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Le username est obligatoire</div>
+        </div>
+        </div>   
+      </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label text-dark labels">Nom</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control champ border-dark h-75 w-75" [ngClass]="{'is-invalid': submitted && f.nom.errors}" id="" placeholder="Nom">
+              <input [ngClass]="{'is-invalid': submitted && f.nom.errors}" formControlName="nom" type="text" class="form-control champ border-dark h-75 w-75" id="" placeholder="Nom">
               <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
                 <div *ngIf="f.nom.errors.required">Le nom est obligatoire</div>
             </div>
             </div>
           </div>
+
           <div class="form-group row ">
             <label class="col-sm-2 col-form-label text-dark labels">Prenom</label>
             <div class="col-sm-10">
-              <input  [ngClass]="{'is-invalid': submitted && f.prenom.errors}" type="text" class="form-control champ border-dark h-75 w-75" id="" placeholder="Prenom">
+              <input  [ngClass]="{'is-invalid': submitted && f.prenom.errors}" formControlName="prenom" type="text" class="form-control champ border-dark h-75 w-75" id="" placeholder="Prenom">
               <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
                 <div *ngIf="f.prenom.errors.required">Le prenom est obligatoire</div>
             </div>
-            </div>
-            
+            </div>   
           </div>
+
           <div class="form-group row">
             <label class="col-sm-2 col-form-label text-dark labels">Email</label>
             <div class="col-sm-10">
-              <input  [ngClass]="{'is-invalid': submitted && f.email.errors}" type="text" class="form-control champ border-dark h-75 w-75" id="" placeholder="Email">
+              <input [ngClass]="{'is-invalid': submitted && f.email.errors}" type="text" formControlName="email" class="form-control champ border-dark h-75 w-75" id="" placeholder="Email">
               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf="f.email.errors.required">L'email est obligatoire</div>
             </div>
             </div>
           </div>
-        <div class="input-group mb-3">
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-dark labels">Genre</label>
+            <div class="col-sm-10">
+              <input [ngClass]="{'is-invalid': submitted && f.genre.errors}" type="text" formControlName="genre" class="form-control champ border-dark h-75 w-75" id="" placeholder="Genre">
+              <div *ngIf="submitted && f.genre.errors" class="invalid-feedback">
+                <div *ngIf="f.genre.errors.required">L'genre est obligatoire</div>
+            </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-dark labels">Telephone</label>
+            <div class="col-sm-10">
+              <input [ngClass]="{'is-invalid': submitted && f.telephone.errors}" type="number" formControlName="telephone" class="form-control champ border-dark h-75 w-75" id="" placeholder="Telephone">
+              <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                <div *ngIf="f.telephone.errors.required">Le telephone est obligatoire</div>
+            </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-dark labels">Adresse</label>
+            <div class="col-sm-10">
+              <input [ngClass]="{'is-invalid': submitted && f.adresse.errors}" type="text" formControlName="adresse" class="form-control champ border-dark h-75 w-75" id="" placeholder="Adresse">
+              <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                <div *ngIf="f.adresse.errors.required">L'adresse est obligatoire</div>
+            </div>
+            </div>
+          </div>
+
+         <div class="input-group mb-3">
             <label class="col-sm-2 col-form-label text-dark labels" >Profil</label>
-            <select [ngClass]="{'is-invalid': submitted && f.profil.errors}" class="custom-select buttonSelect w-75 h-75" id="">
-              <option selected>Choisi</option>
-              <option value="1">ADMINISTRATEUR</option>
-              <option value="2">FORMATEUR</option>
-              <option value="3">COMMUNITY MANAGER</option>
+            <select [ngClass]="{'is-invalid': submitted && f.profil.errors}" formControlName="profil" class="custom-select buttonSelect w-75 h-75" id="">
+              <option value="api/admin/profils/{{profil.id}}" *ngFor="let profil of profils">{{profil.libelle}}</option>
             </select> 
-            <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+            <div *ngIf="submitted && f.profil.errors" class="invalid-feedback">
               <div *ngIf="f.profil.errors.required">Le Profil est obligatoire</div>
           </div>   
           </div>
           <button [disabled]="loading" class="btn btn-warning btSubmit" name="soumettre" type="submit">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Soumettre</button>
-
+            
+            <div class="form-group">
+              <input type="file" class="form-control-file border" formControlName="avatar" id="avatar" (change)="handleFileInput($event.target)" placeholder="Inserer une image">
+            </div>
+            
     </form>
-    <div class="avatar"></div>
-
 </div>

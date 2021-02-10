@@ -23,6 +23,9 @@ import { ParametreComponent } from './Parametres/parametre.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
+  // { path: 'users', component: HomeComponent },
+  // { path: 'users/list', component: ListerUserComponent},
+  // { path: 'users/add', component: AddUserComponent},
   {
     path: 'home',
     component: HomeComponent,

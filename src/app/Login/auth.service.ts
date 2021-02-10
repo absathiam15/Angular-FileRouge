@@ -38,7 +38,7 @@ export class AuthService {
                     localStorage.setItem('token', user.token);
                      let tokenInfo=this.getInfoToken(user['token']);
                     localStorage.setItem('currentUserInfo',JSON.stringify(tokenInfo));
-                    console.log(tokenInfo.roles[0]);
+                    //console.log(tokenInfo.roles[0]);
                     return tokenInfo.roles[0];
                 })
                 );
@@ -56,7 +56,7 @@ export class AuthService {
 
   getToken() {
     const token = localStorage.getItem('token');
-    console.log(token);
+    //console.log(token);
     if (token !== 'undefined') {
       return token;
     }

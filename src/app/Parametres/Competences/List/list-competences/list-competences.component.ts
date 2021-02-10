@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CompetencesService } from '../../competences.service';
 
 @Component({
   selector: 'app-list-competences',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCompetencesComponent implements OnInit {
 
-  constructor() { }
+  dataComp: any;
+  
+  constructor(
+    private http: HttpClient,
+    private competencesService: CompetencesService
+  ) { }
 
   ngOnInit(): void {
+    this.listerComp();
   }
 
-}
+  listerComp() {
+    this.competencesService.listerComp().subscribe(
+      (data:any) => {
+        this.dataComp = data;
+        console.log(this.dataComp);  
+      },
+      (error: any) => console.log(error.console.error.message)
+    )
+  }
+  }
+

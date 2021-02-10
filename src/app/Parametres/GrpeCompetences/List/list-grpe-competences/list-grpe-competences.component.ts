@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GrpCompetencesService } from '../../grp-competences.service';
 
 @Component({
   selector: 'app-list-grpe-competences',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListGrpeCompetencesComponent implements OnInit {
 
-  constructor() { }
+  dataGrpComp:any;
+
+  constructor(
+    private http: HttpClient,
+    private grpCompetencesService: GrpCompetencesService
+  ) { }
 
   ngOnInit(): void {
+    this.listerGrpComp();
   }
 
+  listerGrpComp() {
+    this.grpCompetencesService.listerGrpComp().subscribe(
+      (data:any) => {
+        this.dataGrpComp = data;
+        console.log(this.dataGrpComp);  
+      },
+      (error: any) => console.log(error.console.error.message)
+    )
+  }
 }
